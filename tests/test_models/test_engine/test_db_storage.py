@@ -47,23 +47,23 @@ test_db_storage.py'])
 
 
 # class TestFileStorage(unittest.TestCase):
-#     """Test FileStorage class"""
+#     """Test the FileStorage class"""
 #     @unittest.skipIf(storage_t != 'db', "not testing db storage")
 #     def test_all_returns_dict(self):
-#         """Test that all dictionaty"""
+#         """Test that all returns a dictionaty"""
 #         self.assertIs(type(models.storage.all()), dict)
 
 #     @unittest.skipIf(storage_t != 'db', "not testing db storage")
 #     def test_all_no_class(self):
-#         """Test return is passed"""
+#         """Test that all returns all rows when no class is passed"""
 
 #     @unittest.skipIf(storage_t != 'db', "not testing db storage")
 #     def test_new(self):
-#         """test new obj database"""
+#         """test that new adds an object to the database"""
 
 #     @unittest.skipIf(storage_t != 'db', "not testing db storage")
 #     def test_save(self):
-#         """Test save objects to file"""
+#         """Test that save properly saves objects to file.json"""
 
 class TestDBStorageDocs(unittest.TestCase):
     """Tests to check the documentation and style of DBStorage class"""
