@@ -4,7 +4,7 @@
 '''
 import json
 import models
-import shlex
+
 
 class FileStorage:
     '''
@@ -13,25 +13,19 @@ class FileStorage:
     __file_path = "file.json"
     __objects = {}
 
-    def delete(self, obj=None):
-        """delete obj"""
-        if obj:
-            key = "{}.{}".format(type(obj).__name__, obj.id)
-            del self.__objects[key]
-
     def all(self, cls=None):
         '''
             Return the dictionary
         '''
         new_dict = {}
-        if cls:
-            dictionary = self.__objects
-            for key in dictionary:
-                partition = key.replace('.', ' ')
-                partition = shlex.split(partition)
-                if (partition[0] == cls.__name__):
-                    new_dict[key] = self.__objects[key]
-            return (new_dict)
+        if cls is None:
+            return self.__objects
+
+        if cls != "":
+            for k, v in self.__objects.items():
+                if cls == k.split(".")[0]:
+                    new_dict[k] = v
+            return new_dict
         else:
             return self.__objects
 
