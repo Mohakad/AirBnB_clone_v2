@@ -27,6 +27,7 @@ class test_Amenity(test_basemodel):
         new = self.value()
         self.assertEqual(type(new.name), str)
 
+
 class Test_PEP8(unittest.TestCase):
     """test User"""
     def test_pep8_user(self):
