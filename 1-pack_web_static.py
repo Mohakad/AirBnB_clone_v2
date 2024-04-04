@@ -3,6 +3,7 @@
 from datetime import datetime
 from fabric.api import *
 
+
 def do_pack():
     """ archive from the contents of the web_static"""
     time = datetime.now().strftime('%Y%m%d%H%M%S')
@@ -12,5 +13,5 @@ def do_pack():
         local("tar --create --verbose -z --file={} ./web_static"
               .format(name))
         return name
-    except:
+    except NotADirectoryError:
         return None
