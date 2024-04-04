@@ -5,7 +5,7 @@ from fabric.operations import local, put, sudo, run
 from datetime import datetime
 import os
 
-env.hosts = ['66.70.184.249', '54.210.138.75']
+env.hosts = ['35.174.209.127', '34.234.201.37']
 created_path = None
 
 
