@@ -10,8 +10,6 @@ from models import storage
 app = Flask(__name__)
 
 
-
-
 @app.route('/hbnb_filters', strict_slashes=False)
 def filters():
     """display a HTML page like 6-index.html from static"""
@@ -19,8 +17,6 @@ def filters():
     amenities = storage.all("Amenity").values()
     return render_template('10-hbnb_filters.html', states=states,
                            amenities=amenities)
-
-
 
 
 @app.teardown_appcontext
